@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronRight, Phone, Mail, BarChart3, Lightbulb, Target, TrendingUp, Settings, Vote, Database, FileSpreadsheet, Code, Crown} from 'lucide-react';
-
+import './App.css';
 
 const EATechWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -304,7 +304,7 @@ const EATechWebsite = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+      <nav className="fixed top-0 w-full bg-transparent backdrop-blur-sm border-b border-white/10 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -360,101 +360,130 @@ const EATechWebsite = () => {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section id="inicio" className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+        {/* Hero Section */}
+        <section
+          id="inicio"
+          className="relative pt-32 overflow-hidden h-[450px] mb-12 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://static.wixstatic.com/media/b151a14eee7a4f79bb2e3091505dfc30.jpg/v1/fill/w_5256,h_3508,al_c,q_90,enc_auto/b151a14eee7a4f79bb2e3091505dfc30.jpg')",
+          }}
+        >
+          {/* capa blanca + blur */}
+          <div className="absolute inset-0 bg-white/20 backdrop-blur-md -z-10" />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent stroke-text">
               SOLUCIONES EN DATOS
             </h1>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent stroke-text">
               FINANZAS - MARKETING - OPERACIONES
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Transformamos datos en conocimiento estratégico para potenciar el éxito empresarial
+            <p className="text-xl md:text-2xl text-gray-800 max-w-4xl mx-auto leading-relaxed">
+              Transformamos datos en conocimiento estratégico para potenciar el éxito
+              empresarial
             </p>
           </div>
+        </section>
 
-          {/* Company Overview */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold mb-4">Quiénes Somos</h2>
-              <p className="text-gray-700 leading-relaxed text-justify">
-                EA Tech Company es una firma especializada en análisis de datos, estrategia financiera y crecimiento digital. 
-                Nuestra misión consiste en transformar información compleja en estrategias accionables que optimicen la rentabilidad, 
-                anticipen tendencias económicas y fortalezcan la presencia digital de nuestros clientes.
-              </p>
-              <p className="text-gray-700 leading-relaxed text-justify">
-                Implementamos soluciones con seguimiento basado en métricas y resultados tangibles, convirtiéndonos en el socio 
-                estratégico de referencia en toma de decisiones basadas en datos.
-              </p>
-            </div>
-            <div className="bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Nuestra Visión</h3>
-              <p className="leading-relaxed text-justify">
-                Convertirnos en el socio estratégico de referencia en toma de decisiones basadas en datos, 
-                impulsando la innovación y el crecimiento sostenible de organizaciones en diversos sectores.
-              </p>
-            </div>
-          </div>
-
-          {/* Solutions Overview */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8">Nuestras Soluciones</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="flex items-start space-x-4">
-                <BarChart3 className="w-8 h-8 text-gray-700 mt-1" />
-                <div>
-                  <h4 className="font-semibold mb-2">Business Intelligence</h4>
-                  <p className="text-gray-600">
-                    Creación de sistemas, informes y automatizaciones personalizados para control flexible de datos, análisis y dashboards interactivos.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <Lightbulb className="w-8 h-8 text-gray-700 mt-1" />
-                <div>
-                  <h4 className="font-semibold mb-2">Consultoría Integral</h4>
-                  <p className="text-gray-600">
-                    Soluciones personalizadas en finanzas, marketing y operaciones con acompañamiento continuo para el éxito de las organizaciones.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Team Section */}
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-8">Nuestro Equipo</h3>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
-                <img
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQHBjglRbVTxCg/profile-displayphoto-shrink_800_800/B4EZVzsOY3HcAg-/0/1741402728439?e=1756339200&v=beta&t=5JnayiC7rA78DWH2IvvGIeE4WBKQTlGxCxQK7soWmT0"
-                  alt="Foto de Daniel Hurtado"
-                  className="w-24 h-24 rounded-full mb-4 object-cover"
-                />
-                <h4 className="font-semibold text-lg mb-2">Daniel Hurtado</h4>
-                <p className="text-gray-600 font-medium mb-4">CEO y Gerente de Datos / Científico de datos y Economista</p>
-                <p className="text-gray-600 text-justify">
-                  Daniel cuenta con más de 3 años de experiencia en ciencia de datos, combinando economía, BI y machine learning para sectores como salud, manufactura, retail y e-commerce.
+        {/* Main Content Section */}
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Company Overview */}
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold mb-4">Quiénes Somos</h2>
+                <p className="text-gray-700 leading-relaxed text-justify">
+                  EA Tech Company es una firma especializada en análisis de datos,
+                  estrategia financiera y crecimiento digital. Nuestra misión consiste
+                  en transformar información compleja en estrategias accionables que
+                  optimicen la rentabilidad, anticipen tendencias económicas y
+                  fortalezcan la presencia digital de nuestros clientes.
+                </p>
+                <p className="text-gray-700 leading-relaxed text-justify">
+                  Implementamos soluciones con seguimiento basado en métricas y
+                  resultados tangibles, convirtiéndonos en el socio estratégico de
+                  referencia en toma de decisiones basadas en datos.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
-                <img
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQH2XVYrHnD4lw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668789112556?e=1756339200&v=beta&t=i6CFAda6dcTcp_NIA12pXjG8dfSHAJ-ukDSjGUMWjDM"
-                  alt="Foto de Valentina Pacheco Ferrer"
-                  className="w-24 h-24 rounded-full mb-4 object-cover"
-                />
-                <h4 className="font-semibold text-lg mb-2">Valentina Pacheco Ferrer</h4>
-                <p className="text-gray-600 font-medium mb-4">Directora de crecimiento y marketing / Estratega y Economista</p>
-                <p className="text-gray-600 text-justify">
-                  Valentina cuenta con 10 años en el sector social, 5 en el sector público, y 3 años en el sector digital acompañando fundaciones, emprendimientos, marcas personales y políticas.
+              <div className="bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Nuestra Visión</h3>
+                <p className="leading-relaxed text-justify">
+                  Convertirnos en el socio estratégico de referencia en toma de
+                  decisiones basadas en datos, impulsando la innovación y el crecimiento
+                  sostenible de organizaciones en diversos sectores.
                 </p>
               </div>
             </div>
+
+            {/* Solutions Overview */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
+              <h3 className="text-2xl font-bold text-center mb-8">Nuestras Soluciones</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="flex items-start space-x-4">
+                  <BarChart3 className="w-8 h-8 text-gray-700 mt-1" />
+                  <div>
+                    <h4 className="font-semibold mb-2">Business Intelligence</h4>
+                    <p className="text-gray-600">
+                      Creación de sistemas, informes y automatizaciones personalizados para
+                      control flexible de datos, análisis y dashboards interactivos.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <Lightbulb className="w-8 h-8 text-gray-700 mt-1" />
+                  <div>
+                    <h4 className="font-semibold mb-2">Consultoría Integral</h4>
+                    <p className="text-gray-600">
+                      Soluciones personalizadas en finanzas, marketing y operaciones con
+                      acompañamiento continuo para el éxito de las organizaciones.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Team Section */}
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-8">Nuestro Equipo</h3>
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
+                  <img
+                    src="https://media.licdn.com/dms/image/v2/D4E03AQHBjglRbVTxCg/profile-displayphoto-shrink_800_800/B4EZVzsOY3HcAg-/0/1741402728439?e=1756339200&v=beta&t=5JnayiC7rA78DWH2IvvGIeE4WBKQTlGxCxQK7soWmT0"
+                    alt="Foto de Daniel Hurtado"
+                    className="w-24 h-24 rounded-full mb-4 object-cover"
+                  />
+                  <h4 className="font-semibold text-lg mb-2">Daniel Hurtado</h4>
+                  <p className="text-gray-600 font-medium mb-4">
+                    CEO y Gerente de Datos / Científico de datos y Economista
+                  </p>
+                  <p className="text-gray-600 text-justify">
+                    Daniel cuenta con más de 3 años de experiencia en ciencia de datos,
+                    combinando economía, BI y machine learning para sectores como salud,
+                    manufactura, retail y e-commerce.
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
+                  <img
+                    src="https://media.licdn.com/dms/image/v2/D4E03AQH2XVYrHnD4lw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668789112556?e=1756339200&v=beta&t=i6CFAda6dcTcp_NIA12pXjG8dfSHAJ-ukDSjGUMWjDM"
+                    alt="Foto de Valentina Pacheco Ferrer"
+                    className="w-24 h-24 rounded-full mb-4 object-cover"
+                  />
+                  <h4 className="font-semibold text-lg mb-2">Valentina Pacheco Ferrer</h4>
+                  <p className="text-gray-600 font-medium mb-4">
+                    Directora de crecimiento y marketing / Estratega y Economista
+                  </p>
+                  <p className="text-gray-600 text-justify">
+                    Valentina cuenta con 10 años en el sector social, 5 en el sector público,
+                    y 3 años en el sector digital acompañando fundaciones, emprendimientos,
+                    marcas personales y políticas.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
 
       {/* Services Section */}
       <section id="servicios" className="py-20 bg-gray-50">
