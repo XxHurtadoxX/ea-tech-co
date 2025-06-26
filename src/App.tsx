@@ -5,26 +5,131 @@ const EATechWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
 
-  const services = [
+  const ServiceCard = ({ icon, title, bullets }: {
+    icon: JSX.Element;
+    title: string;
+    bullets: { label: string; detail: string }[];
+  }) => {
+    const [showMore, setShowMore] = useState(false);
+
+    return (
+      <div className="bg-white shadow-md p-6 rounded-xl space-y-3">
+        <div className="flex items-center space-x-3 mb-2">
+          {icon}
+          <h3 className="text-xl font-semibold">{title}</h3>
+        </div>
+        <ul className="list-disc pl-5 text-justify text-sm">
+          {bullets.map((item, idx) => (
+            <li key={idx}>
+              {item.label}
+              {showMore && (
+                <p className="text-gray-600 mt-1">{item.detail}</p>
+              )}
+            </li>
+          ))}
+        </ul>
+        <button
+          onClick={() => setShowMore(!showMore)}
+          className="text-blue-600 text-sm hover:underline mt-2"
+        >
+          {showMore ? "Ver menos" : "Ver más"}
+        </button>
+      </div>
+    );
+  };
+
+  const servicesData = [
     {
-      icon: <TrendingUp className="w-8 h-8" />,
+      icon: <TrendingUp className="w-8 h-8 text-gray-700" />,
       title: "Finanzas",
-      description: "Modelado predictivo de mercado, optimización financiera basada en datos y análisis automatizado con agentes inteligentes para maximizar la rentabilidad."
+      description: "Optimización financiera y análisis predictivo para maximizar rentabilidad",
+      bullets: [
+        {
+          label: "Modelado predictivo de mercado",
+          detail: "Anticipamos escenarios económicos mediante machine learning y series de tiempo."
+        },
+        {
+          label: "Optimización financiera basada en datos",
+          detail: "Maximizamos utilidades reduciendo riesgos a través de dashboards y simulaciones."
+        },
+        {
+          label: "Análisis automatizado con agentes inteligentes",
+          detail: "Implementamos bots que ejecutan tareas de detección de anomalías y reporting."
+        },
+        {
+          label: "Estrategias de rentabilidad",
+          detail: "Diseñamos planes de inversión y flujo de caja óptimos según tus objetivos."
+        }
+      ]
     },
     {
-      icon: <Target className="w-8 h-8" />,
+      icon: <Target className="w-8 h-8 text-gray-700" />,
       title: "Marketing",
-      description: "Desarrollo de identidad de marca basada en datos, estrategia digital con métricas y monetización de marcas personales y corporativas."
+      description: "Estrategias digitales y construcción de marca con análisis de datos",
+      bullets: [
+        {
+          label: "Construcción de identidad de marca",
+          detail: "Desarrollamos tu storytelling y diseño visual respaldados en análisis cuali-cuanti."
+        },
+        {
+          label: "Estrategia digital con KPIs",
+          detail: "Creamos embudos de conversión y medimos cada interacción para optimizar ROI."
+        },
+        {
+          label: "Monetización de marcas personales y corporativas",
+          detail: "Implementamos acciones de contenido, afiliados y e-commerce para generar ingresos."
+        },
+        {
+          label: "Campañas optimizadas por IA",
+          detail: "Segmentamos audiencias y ajustamos creatividades en tiempo real con algoritmos."
+        }
+      ]
     },
     {
-      icon: <Settings className="w-8 h-8" />,
+      icon: <Settings className="w-8 h-8 text-gray-700" />,
       title: "Gestión Operativa",
-      description: "Optimización de procesos, gestión inteligente de inventarios, control de costos en tiempo real y monitoreo de calidad mediante IA."
+      description: "Automatización de procesos y optimización operacional",
+      bullets: [
+        {
+          label: "Automatización de procesos críticos",
+          detail: "Integramos RPA y flujos de trabajo automáticos para reducir tiempos muertos."
+        },
+        {
+          label: "Gestión inteligente de inventarios",
+          detail: "Aplicamos forecasting y reorder points para evitar quiebres o sobrestock."
+        },
+        {
+          label: "Control de costos en tiempo real",
+          detail: "Monitoreamos KPIs operativos con alertas instantáneas al superar umbrales."
+        },
+        {
+          label: "Monitoreo de calidad con machine learning",
+          detail: "Detectamos defectos o variaciones con visión por computador y análisis continuo."
+        }
+      ]
     },
     {
-      icon: <Vote className="w-8 h-8" />,
+      icon: <Vote className="w-8 h-8 text-gray-700" />,
       title: "Servicios Electorales",
-      description: "Análisis de datos electorales, estrategias de comunicación política y modelado predictivo para campañas políticas efectivas."
+      description: "Estrategia política y comunicación electoral basada en datos",
+      bullets: [
+        {
+          label: "Rebranding y estrategia digital",
+          detail: "Renovación de identidad y narrativa online para conectar con tu electorado."
+        },
+        {
+          label: "Investigación electoral",
+          detail: "Diseño de encuestas, segmentación de votantes y modelado predictivo por región."
+        },
+        {
+          label: "Comunicación política",
+          detail: "Media training, gestión de crisis y mensajes clave para cada audiencia."
+        },
+        {
+          label: "Evaluación post-electoral",
+          detail: "Análisis de resultados, rebranding post-campaña y planificación de expansión."
+        }
+      ]
     }
   ];
 
@@ -51,12 +156,14 @@ const EATechWebsite = () => {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo placeholder */}
+            {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-black to-gray-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">EA</span>
-              </div>
-              <span className="font-bold text-xl">EA TECH COMPANY</span>
+              <img
+                src="https://i.imgur.com/p5QcCPf.png"
+                alt="Logo EA"
+                className="h-12 w-auto object-contain"
+              />
+              <span className="font-bold text-xl">EA Tech Company</span>
             </div>
 
             {/* Desktop Navigation */}
@@ -107,6 +214,9 @@ const EATechWebsite = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+              SOLUCIONES EN DATOS
+            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
               FINANZAS - MARKETING - OPERACIONES
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -118,19 +228,19 @@ const EATechWebsite = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold mb-4">Quiénes Somos</h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-justify">
                 EA Tech Company es una firma especializada en análisis de datos, estrategia financiera y crecimiento digital. 
                 Nuestra misión consiste en transformar información compleja en estrategias accionables que optimicen la rentabilidad, 
                 anticipen tendencias económicas y fortalezcan la presencia digital de nuestros clientes.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-justify">
                 Implementamos soluciones con seguimiento basado en métricas y resultados tangibles, convirtiéndonos en el socio 
                 estratégico de referencia en toma de decisiones basadas en datos.
               </p>
             </div>
             <div className="bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">Nuestra Visión</h3>
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-justify">
                 Convertirnos en el socio estratégico de referencia en toma de decisiones basadas en datos, 
                 impulsando la innovación y el crecimiento sostenible de organizaciones en diversos sectores.
               </p>
@@ -146,7 +256,7 @@ const EATechWebsite = () => {
                 <div>
                   <h4 className="font-semibold mb-2">Business Intelligence</h4>
                   <p className="text-gray-600">
-                    Creación de sistemas personalizados para control flexible de datos, análisis y dashboards interactivos.
+                    Creación de sistemas, informes y automatizaciones personalizados para control flexible de datos, análisis y dashboards interactivos.
                   </p>
                 </div>
               </div>
@@ -155,52 +265,42 @@ const EATechWebsite = () => {
                 <div>
                   <h4 className="font-semibold mb-2">Consultoría Integral</h4>
                   <p className="text-gray-600">
-                    Soluciones personalizadas en finanzas, marketing y operaciones con acompañamiento continuo.
+                    Soluciones personalizadas en finanzas, marketing y operaciones con acompañamiento continuo para el éxito de las organizaciones.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-        {/* Team Section */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold mb-8">Nuestro Equipo</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            
-            {/* Socio 1 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-              <div className="mb-6">
-                <img 
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQHBjglRbVTxCg/profile-displayphoto-shrink_800_800/B4EZVzsOY3HcAg-/0/1741402728439?e=1756339200&v=beta&t=5JnayiC7rA78DWH2IvvGIeE4WBKQTlGxCxQK7soWmT0" 
-                  alt="Foto del Socio 1"
-                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-gray-200"
+          {/* Team Section */}
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-8">Nuestro Equipo</h3>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQHBjglRbVTxCg/profile-displayphoto-shrink_800_800/B4EZVzsOY3HcAg-/0/1741402728439?e=1756339200&v=beta&t=5JnayiC7rA78DWH2IvvGIeE4WBKQTlGxCxQK7soWmT0"
+                  alt="Foto de Daniel Hurtado"
+                  className="w-24 h-24 rounded-full mb-4 object-cover"
                 />
+                <h4 className="font-semibold text-lg mb-2">Daniel Hurtado</h4>
+                <p className="text-gray-600 font-medium mb-4">CEO y Gerente de Datos / Científico de datos y Economista</p>
+                <p className="text-gray-600 text-justify">
+                  Daniel cuenta con más de 3 años de experiencia en ciencia de datos, combinando economía, BI y machine learning para sectores como salud, manufactura, retail y e-commerce.
+                </p>
               </div>
-              <h4 className="font-semibold text-xl mb-3 text-gray-800">Daniel Hurtado</h4>
-              <p className="text-blue-600 font-medium mb-4">CEO - Gerente de analítica/Científico de datos y Economista</p>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Descripción de la experiencia, formación académica, años de experiencia 
-                en el sector, especialidades, logros destacados, etc.
-              </p>
-            </div>
-        
-            {/* Socio 2 */}
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-              <div className="mb-6">
-                <img 
-                  src="/ruta/a/imagen-socio2.jpg" 
-                  alt="Foto del Socio 2"
-                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-gray-200"
+              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQH2XVYrHnD4lw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668789112556?e=1756339200&v=beta&t=i6CFAda6dcTcp_NIA12pXjG8dfSHAJ-ukDSjGUMWjDM"
+                  alt="Foto de Valentina Pacheco Ferrer"
+                  className="w-24 h-24 rounded-full mb-4 object-cover"
                 />
+                <h4 className="font-semibold text-lg mb-2">Valentina Pacheco Ferrer</h4>
+                <p className="text-gray-600 font-medium mb-4">Directora de crecimiento y marketing / Estratega y Economista</p>
+                <p className="text-gray-600 text-justify">
+                  Valentina cuenta con 10 años en el sector social, 5 en el sector público, y 3 años en el sector digital acompañando fundaciones, emprendimientos, marcas personales y políticas.
+                </p>
               </div>
-              <h4 className="font-semibold text-xl mb-3 text-gray-800">Nombre del Socio 2</h4>
-              <p className="text-blue-600 font-medium mb-4">Cargo/Título Profesional</p>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Descripción de la experiencia, formación académica, años de experiencia 
-                en el sector, especialidades, logros destacados, etc.
-              </p>
             </div>
-        
           </div>
         </div>
       </section>
@@ -215,18 +315,20 @@ const EATechWebsite = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="text-gray-700 mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
-              </div>
+          {/* Service Cards con detalles */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {servicesData.map((svc, i) => (
+              <ServiceCard
+                key={i}
+                icon={svc.icon}
+                title={svc.title}
+                bullets={svc.bullets}
+              />
             ))}
           </div>
 
           {/* Detailed Features */}
-          <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
+          <div className="bg-white rounded-2xl p-8 shadow-lg">
             <h3 className="text-2xl font-bold text-center mb-12">Características Destacadas</h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -293,24 +395,21 @@ const EATechWebsite = () => {
 
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {/* Logo Section */}
-            <div>
-              <div className="mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-white to-gray-300 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-black font-bold text-2xl">EA</span>
-                </div>
-                <p className="text-gray-300">
-                  [Espacio para logo en PNG - versión blanca]
-                </p>
-              </div>
+            <div className="mb-6 flex justify-center">
+              <img
+                src="https://i.imgur.com/Q57HCQU.png"
+                alt="Logo EA"
+                className="h-32 w-auto object-contain"
+              />
             </div>
 
             {/* Phone Contact */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">Teléfonos WhatsApp</h3>
+              <h3 className="text-xl font-semibold mb-4">WhatsApp</h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-center space-x-3">
                   <Phone className="w-5 h-5" />
-                  <span>[Tu número de WhatsApp]</span>
+                  <span>+57 305 3421950</span>
                 </div>
                 <p className="text-sm text-gray-400">Respuesta inmediata por WhatsApp</p>
               </div>
@@ -322,7 +421,7 @@ const EATechWebsite = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-center space-x-3">
                   <Mail className="w-5 h-5" />
-                  <span>[Tu correo empresarial]</span>
+                  <span>econoanalyticgroup@gmail.com</span>
                 </div>
                 <p className="text-sm text-gray-400">Consultas y cotizaciones</p>
               </div>
