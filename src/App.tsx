@@ -403,17 +403,25 @@ const EATechWebsite = () => {
               />
             </div>
 
-            {/* Phone Contact */}
+            {/* WhatsApp Contact */}
             <div>
               <h3 className="text-xl font-semibold mb-4">WhatsApp</h3>
               <div className="space-y-3">
-                <div className="flex items-center justify-center space-x-3">
+                <a
+                  href="https://wa.me/573053421950"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-3 bg-white text-gray-800 border border-gray-300 px-4 py-2 rounded-md transition-colors duration-200 hover:bg-gray-200 hover:text-black"
+                >
                   <Phone className="w-5 h-5" />
-                  <span>+57 305 3421950</span>
-                </div>
-                <p className="text-sm text-gray-400">Respuesta inmediata por WhatsApp</p>
+                  <span>Escríbenos por WhatsApp</span>
+                </a>
+                <p className="text-sm text-gray-400 text-center">
+                  Respuesta inmediata por WhatsApp
+                </p>
               </div>
             </div>
+
 
             {/* Email Contact */}
             <div>
