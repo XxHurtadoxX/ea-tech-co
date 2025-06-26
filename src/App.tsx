@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, X, ChevronRight, Phone, Mail, Users, BarChart3, Lightbulb, Target, TrendingUp, Settings, Vote, GraduationCap } from 'lucide-react';
+import { Menu, X, ChevronRight, Phone, Mail, BarChart3, Lightbulb, Target, TrendingUp, Settings, Vote, Database, FileSpreadsheet, Code, Crown} from 'lucide-react';
+
 
 const EATechWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,6 +35,79 @@ const EATechWebsite = () => {
         >
           {showMore ? "Ver menos" : "Ver más"}
         </button>
+      </div>
+    );
+  };
+
+  // NUEVO: Componente CourseCard con funcionalidad expandible
+  const CourseCard = ({ course, index }: { course: any; index: number }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    return (
+      <div className="group bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all hover:border-gray-300">
+        <div 
+          className="p-6 cursor-pointer"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          <div className="flex items-center justify-between mb-4">
+            {course.icon}
+            <ChevronRight className={`w-5 h-5 text-gray-400 group-hover:text-gray-600 transition-all ${isExpanded ? 'rotate-90' : ''}`} />
+          </div>
+          <h3 className="text-lg font-bold mb-2">{course.name}</h3>
+          <p className="text-gray-600">{course.description}</p>
+        </div>
+        
+        {isExpanded && (
+          <div className="px-6 pb-6 border-t border-gray-100 bg-white">
+            <div className="pt-4 space-y-4">
+              {/* Información del curso */}
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span className="font-semibold text-gray-700">Duración:</span>
+                  <p className="text-gray-600">{course.duration}</p>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700">Clases:</span>
+                  <p className="text-gray-600">{course.classes}</p>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700">Metodología:</span>
+                  <p className="text-gray-600">{course.methodology}</p>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700">Inversión:</span>
+                  <p className="text-green-600 font-bold">{course.price}</p>
+                </div>
+              </div>
+              
+              {/* Contenido del curso */}
+              <div>
+                <h4 className="font-semibold text-gray-700 mb-2">Contenido del curso:</h4>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  {course.content.map((item: string, idx: number) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              {/* Botón de contacto */}
+              <div className="pt-2">
+                <a
+                  href={`https://wa.me/573053421950?text=Hola,%20estoy%20interesado%20en%20el%20curso%20de%20${encodeURIComponent(course.name)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Solicitar información
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   };
@@ -134,11 +208,88 @@ const EATechWebsite = () => {
   ];
 
   const courses = [
-    { name: "Excel Avanzado", description: "Domina las herramientas avanzadas de análisis" },
-    { name: "Python para Datos", description: "Programación aplicada a ciencia de datos" },
-    { name: "Power BI", description: "Visualización y business intelligence" },
-    { name: "SQL", description: "Gestión y consulta de bases de datos" },
-    { name: "Liderazgo Político", description: "Estrategias de comunicación y liderazgo" }
+    { 
+      name: "Excel Avanzado", 
+      description: "Domina las herramientas avanzadas de análisis",
+      icon: <FileSpreadsheet className="w-8 h-8 text-green-600" />,
+      duration: "48 horas",
+      classes: "2 sesiones de 4h por semana",
+      methodology: "50% módulos auto-aprendizaje + 50% clases en vivo",
+      price: "$ 200.000 COP (pago único)",
+      content: [
+        "Excel básico",
+        "Funciones anidadas y fórmulas complejas",
+        "Tablas dinámicas avanzadas y modelado de datos",
+        "Macros y automatización con VBA",
+        "Dashboards interactivos con segmentadores",
+        "Análisis estadístico y Solver"
+      ]
+    },
+    { 
+      name: "Python para Datos", 
+      description: "Programación aplicada a ciencia de datos",
+      icon: <Code className="w-8 h-8 text-blue-600" />,
+      duration: "48 horas",
+      classes: "4 sesiones de 2h por semana",
+      methodology: "100% virtual",
+      price: "$ 270.000 COP (2 cuotas de $ 135.000)",
+      content: [
+        "Sintaxis y estructuras de control",
+        "Pandas y NumPy para manipulación de datos",
+        "Visualización con Matplotlib, Seaboarn y Plotly",
+        "Introducción a Scikit-Learn",
+        "Proyecto final: análisis real de un dataset"
+      ]
+    },
+    { 
+      name: "Power BI", 
+      description: "Visualización y business intelligence",
+      icon: <BarChart3 className="w-8 h-8 text-yellow-600" />,
+      duration: "48 horas",
+      classes: "2 sesiones de 4h por semana",
+      methodology: "100% virtual con casos de empresa reales",
+      price: "$ 200.000 COP (pago único)",
+      content: [
+        "Manejo básico como usuario",
+        "Conexión a múltiples orígenes de datos",
+        "Modelado de datos y creación de relaciones",
+        "Desarrollo de reportes y dashboards",
+        "DAX: medidas y expresiones",
+        "Creación de tablero empresarial de pyme"
+      ]
+    },
+    { 
+      name: "SQL", 
+      description: "Gestión y consulta de bases de datos",
+      icon: <Database className="w-8 h-8 text-purple-600" />,
+      duration: "48 horas",
+      classes: "4 sesiones de 2h por semana",
+      methodology: "80% práctica en entorno real + 20% teoría",
+      price: "$ 270.000 COP (2 cuotas de $ 135.000)",
+      content: [
+        "Sentencias SELECT, INSERT, UPDATE, DELETE",
+        "Joins, subconsultas y CTEs",
+        "Procedimientos almacenados y triggers",
+        "Optimización de índices y consultas",
+        "Administración básica de servidores SQL"
+      ]
+    },
+    { 
+      name: "Liderazgo Político", 
+      description: "Estrategias de comunicación y liderazgo",
+      icon: <Crown className="w-8 h-8 text-red-600" />,
+      duration: "40 horas",
+      classes: "2 sesiones de 4h por semana",
+      methodology: "Formación mixta: presencial + e-learning",
+      price: "$ 200.000 COP (pago único)",
+      content: [
+        "Técnicas de comunicación política",
+        "Gestión de campaña digital",
+        "Simulacros de manejo de crisis",
+        "Análisis de encuestas y opinión pública",
+        "Negociación y formación de alianzas"
+      ]
+    }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -369,14 +520,7 @@ const EATechWebsite = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courses.map((course, index) => (
-              <div key={index} className="group bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all hover:border-gray-300">
-                <div className="flex items-center justify-between mb-4">
-                  <GraduationCap className="w-8 h-8 text-gray-600" />
-                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-gray-600 transition-colors" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">{course.name}</h3>
-                <p className="text-gray-600">{course.description}</p>
-              </div>
+              <CourseCard key={index} course={course} index={index} />
             ))}
           </div>
         </div>
