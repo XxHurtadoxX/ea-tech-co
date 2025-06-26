@@ -36,7 +36,7 @@ const EATechWebsite = () => {
     { name: "Liderazgo Político", description: "Estrategias de comunicación y liderazgo" }
   ];
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
