@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ea-tech-co/static/css/main.11ed03cd.css",
-    "main.js": "/ea-tech-co/static/js/main.1cc344c6.js",
+    "main.css": "/ea-tech-co/static/css/main.6816320e.css",
+    "main.js": "/ea-tech-co/static/js/main.b71ae4c5.js",
     "static/js/453.99906ecf.chunk.js": "/ea-tech-co/static/js/453.99906ecf.chunk.js",
     "index.html": "/ea-tech-co/index.html",
-    "main.11ed03cd.css.map": "/ea-tech-co/static/css/main.11ed03cd.css.map",
-    "main.1cc344c6.js.map": "/ea-tech-co/static/js/main.1cc344c6.js.map",
+    "main.6816320e.css.map": "/ea-tech-co/static/css/main.6816320e.css.map",
+    "main.b71ae4c5.js.map": "/ea-tech-co/static/js/main.b71ae4c5.js.map",
     "453.99906ecf.chunk.js.map": "/ea-tech-co/static/js/453.99906ecf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.11ed03cd.css",
-    "static/js/main.1cc344c6.js"
+    "static/css/main.6816320e.css",
+    "static/js/main.b71ae4c5.js"
   ]
 }
