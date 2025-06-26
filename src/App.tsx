@@ -363,7 +363,7 @@ const EATechWebsite = () => {
         {/* Hero Section */}
         <section
           id="inicio"
-          className="relative pt-32 overflow-hidden h-[450px] mb-12 bg-cover bg-center"
+          className="relative pt-32 overflow-hidden min-h-[450px] md:h-[450px] mb-12 bg-cover bg-center"
           style={{
             backgroundImage:
               "url('https://static.wixstatic.com/media/b151a14eee7a4f79bb2e3091505dfc30.jpg/v1/fill/w_5256,h_3508,al_c,q_90,enc_auto/b151a14eee7a4f79bb2e3091505dfc30.jpg')",
