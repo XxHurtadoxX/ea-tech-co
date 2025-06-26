@@ -162,26 +162,45 @@ const EATechWebsite = () => {
             </div>
           </div>
 
-          {/* Team Section */}
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-8">Nuestro Equipo</h3>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Placeholder para fotos de socios */}
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
-                <Users className="w-16 h-16 text-gray-500 mb-4" />
-                <h4 className="font-semibold text-lg mb-2">Socio 1</h4>
-                <p className="text-gray-600 text-center">
-                  [Espacio para foto y descripción de experiencia del primer socio]
-                </p>
+        {/* Team Section */}
+        <div className="text-center">
+          <h3 className="text-2xl font-bold mb-8">Nuestro Equipo</h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
+            {/* Socio 1 */}
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+              <div className="mb-6">
+                <img 
+                  src="https://media.licdn.com/dms/image/v2/D4E03AQHBjglRbVTxCg/profile-displayphoto-shrink_800_800/B4EZVzsOY3HcAg-/0/1741402728439?e=1756339200&v=beta&t=5JnayiC7rA78DWH2IvvGIeE4WBKQTlGxCxQK7soWmT0" 
+                  alt="Foto del Socio 1"
+                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-gray-200"
+                />
               </div>
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
-                <Users className="w-16 h-16 text-gray-500 mb-4" />
-                <h4 className="font-semibold text-lg mb-2">Socio 2</h4>
-                <p className="text-gray-600 text-center">
-                  [Espacio para foto y descripción de experiencia del segundo socio]
-                </p>
-              </div>
+              <h4 className="font-semibold text-xl mb-3 text-gray-800">Daniel Hurtado</h4>
+              <p className="text-blue-600 font-medium mb-4">CEO - Gerente de analítica/Científico de datos y Economista</p>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Descripción de la experiencia, formación académica, años de experiencia 
+                en el sector, especialidades, logros destacados, etc.
+              </p>
             </div>
+        
+            {/* Socio 2 */}
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+              <div className="mb-6">
+                <img 
+                  src="/ruta/a/imagen-socio2.jpg" 
+                  alt="Foto del Socio 2"
+                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-gray-200"
+                />
+              </div>
+              <h4 className="font-semibold text-xl mb-3 text-gray-800">Nombre del Socio 2</h4>
+              <p className="text-blue-600 font-medium mb-4">Cargo/Título Profesional</p>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Descripción de la experiencia, formación académica, años de experiencia 
+                en el sector, especialidades, logros destacados, etc.
+              </p>
+            </div>
+        
           </div>
         </div>
       </section>
