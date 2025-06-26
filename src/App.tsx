@@ -210,7 +210,7 @@ const EATechWebsite = () => {
   const courses = [
     { 
       name: "Excel Avanzado", 
-      description: "Domina las herramientas avanzadas de análisis",
+      description: "Domina la herramienta por excelencia de análisis de datos, la utilizaras siempre",
       icon: <FileSpreadsheet className="w-8 h-8 text-green-600" />,
       duration: "48 horas",
       classes: "2 sesiones de 4h por semana",
@@ -227,7 +227,7 @@ const EATechWebsite = () => {
     },
     { 
       name: "Python para Datos", 
-      description: "Programación aplicada a ciencia de datos",
+      description: "Programación aplicada a ciencia de datos, te funcionara para analizar grandes cantidades de datos y encontrar patrones ocultos.",
       icon: <Code className="w-8 h-8 text-blue-600" />,
       duration: "48 horas",
       classes: "4 sesiones de 2h por semana",
@@ -243,7 +243,7 @@ const EATechWebsite = () => {
     },
     { 
       name: "Power BI", 
-      description: "Visualización y business intelligence",
+      description: "Visualización y business intelligence, crea sistemas de información integral para reportes ejecutivos.",
       icon: <BarChart3 className="w-8 h-8 text-yellow-600" />,
       duration: "48 horas",
       classes: "2 sesiones de 4h por semana",
@@ -260,7 +260,7 @@ const EATechWebsite = () => {
     },
     { 
       name: "SQL", 
-      description: "Gestión y consulta de bases de datos",
+      description: "Gestión y consulta de bases de datos, consulta datos de bases enormes en tiempo record",
       icon: <Database className="w-8 h-8 text-purple-600" />,
       duration: "48 horas",
       classes: "4 sesiones de 2h por semana",
@@ -275,19 +275,19 @@ const EATechWebsite = () => {
       ]
     },
     { 
-      name: "Liderazgo Político", 
-      description: "Estrategias de comunicación y liderazgo",
+      name: "Liderazgo Político juvenil", 
+      description: "Formar a jóvenes líderes, consejeros y agentes de cambio en múltiples dimensiones",
       icon: <Crown className="w-8 h-8 text-red-600" />,
       duration: "40 horas",
       classes: "2 sesiones de 4h por semana",
       methodology: "Formación mixta: presencial + e-learning",
       price: "$ 200.000 COP (pago único)",
       content: [
-        "Técnicas de comunicación política",
-        "Gestión de campaña digital",
-        "Simulacros de manejo de crisis",
-        "Análisis de encuestas y opinión pública",
-        "Negociación y formación de alianzas"
+        "Fundamentos del liderazgo público juvenil",
+        "Diseño de políticas públicas juveniles",
+        "Formulación de proyectos con enfoque juvenil",
+        "Liderazgo basado en datos + Comunicación de impacto",
+        "Plan de acción, posicionamiento digital y sostenibilidad política"
       ]
     }
   ];
