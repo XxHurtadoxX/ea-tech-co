@@ -210,12 +210,22 @@ const EATechWebsite = () => {
   const courses = [
     { 
       name: "Excel Avanzado", 
-      description: "Domina la herramienta por excelencia de análisis de datos, la utilizaras siempre",
+      description: "Domina la herramienta por excelencia de análisis de datos, ¡te acompañará toda tu carrera profesional!",
       icon: <FileSpreadsheet className="w-8 h-8 text-green-600" />,
       duration: "48 horas",
-      classes: "2 sesiones de 4h por semana",
-      methodology: "50% módulos auto-aprendizaje + 50% clases en vivo",
-      price: "$ 200.000 COP (pago único)",
+      classes: "2 sesiones de 4 h por semana",
+      methodology: "50% autoaprendizaje + 50% clases en vivo",
+      price: (
+        <div className="flex flex-col items-start space-y-1">
+          <div className="flex items-center space-x-2">
+            <span className="text-gray-500 line-through">$ 400.000 COP</span>
+            <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-full text-center">
+              50% OFF July
+            </span>
+          </div>
+          <span className="font-bold text-lg text-green-700">$ 200.000 COP</span>
+        </div>
+      ),
       content: [
         "Excel básico",
         "Funciones anidadas y fórmulas complejas",
@@ -227,28 +237,48 @@ const EATechWebsite = () => {
     },
     { 
       name: "Python para Datos", 
-      description: "Programación aplicada a ciencia de datos, te funcionara para analizar grandes cantidades de datos y encontrar patrones ocultos.",
+      description: "Programación aplicada a ciencia de datos: ¡analiza grandes volúmenes y descubre patrones ocultos!",
       icon: <Code className="w-8 h-8 text-blue-600" />,
       duration: "48 horas",
-      classes: "4 sesiones de 2h por semana",
+      classes: "4 sesiones de 2 h por semana",
       methodology: "100% virtual",
-      price: "$ 270.000 COP (2 cuotas de $ 135.000)",
+      price: (
+        <div className="flex flex-col items-start space-y-1">
+          <div className="flex items-center space-x-2">
+            <span className="text-gray-500 line-through">$ 540.000 COP</span>
+            <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-full text-center">
+              50% OFF July
+            </span>
+          </div>
+          <span className="font-bold text-lg text-green-700">$ 270.000 COP</span>
+        </div>
+      ),
       content: [
         "Sintaxis y estructuras de control",
         "Pandas y NumPy para manipulación de datos",
-        "Visualización con Matplotlib, Seaboarn y Plotly",
+        "Visualización con Matplotlib, Seaborn y Plotly",
         "Introducción a Scikit-Learn",
         "Proyecto final: análisis real de un dataset"
       ]
     },
     { 
       name: "Power BI", 
-      description: "Visualización y business intelligence, crea sistemas de información integral para reportes ejecutivos.",
+      description: "Visualización y BI: crea informes ejecutivos que impacten la toma de decisiones estratégicas.",
       icon: <BarChart3 className="w-8 h-8 text-yellow-600" />,
       duration: "48 horas",
-      classes: "2 sesiones de 4h por semana",
-      methodology: "100% virtual con casos de empresa reales",
-      price: "$ 200.000 COP (pago único)",
+      classes: "2 sesiones de 4 h por semana",
+      methodology: "100% virtual con casos reales de empresa",
+      price: (
+        <div className="flex flex-col items-start space-y-1">
+          <div className="flex items-center space-x-2">
+            <span className="text-gray-500 line-through">$ 400.000 COP</span>
+            <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-full text-center">
+              50% OFF July
+            </span>
+          </div>
+          <span className="font-bold text-lg text-green-700">$ 200.000 COP</span>
+        </div>
+      ),
       content: [
         "Manejo básico como usuario",
         "Conexión a múltiples orígenes de datos",
@@ -260,12 +290,22 @@ const EATechWebsite = () => {
     },
     { 
       name: "SQL", 
-      description: "Gestión y consulta de bases de datos, consulta datos de bases enormes en tiempo record",
+      description: "Consulta y gestiona bases de datos gigantes: obtén respuestas en tiempo récord.",
       icon: <Database className="w-8 h-8 text-purple-600" />,
       duration: "48 horas",
-      classes: "4 sesiones de 2h por semana",
-      methodology: "80% práctica en entorno real + 20% teoría",
-      price: "$ 270.000 COP (2 cuotas de $ 135.000)",
+      classes: "4 sesiones de 2 h por semana",
+      methodology: "80% práctica + 20% teoría en entorno real",
+      price: (
+        <div className="flex flex-col items-start space-y-1">
+          <div className="flex items-center space-x-2">
+            <span className="text-gray-500 line-through">$ 540.000 COP</span>
+            <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-full text-center">
+              50% OFF July
+            </span>
+          </div>
+          <span className="font-bold text-lg text-green-700">$ 270.000 COP</span>
+        </div>
+      ),
       content: [
         "Sentencias SELECT, INSERT, UPDATE, DELETE",
         "Joins, subconsultas y CTEs",
@@ -275,19 +315,29 @@ const EATechWebsite = () => {
       ]
     },
     { 
-      name: "Liderazgo Político juvenil", 
-      description: "Formar a jóvenes líderes, consejeros y agentes de cambio en múltiples dimensiones",
+      name: "Liderazgo Político Juvenil", 
+      description: "Forma parte de la nueva generación de agentes de cambio con enfoque de datos y comunicación de alto impacto.",
       icon: <Crown className="w-8 h-8 text-red-600" />,
       duration: "40 horas",
-      classes: "2 sesiones de 4h por semana",
-      methodology: "Formación mixta: presencial + e-learning",
-      price: "$ 200.000 COP (pago único)",
+      classes: "2 sesiones de 4 h por semana",
+      methodology: "Mixto: presencial + e-learning",
+      price: (
+        <div className="flex flex-col items-start space-y-1">
+          <div className="flex items-center space-x-2">
+            <span className="text-gray-500 line-through">$ 400.000 COP</span>
+            <span className="bg-red-500 text-white text-[10px] font-semibold px-2 py-1 rounded-full text-center">
+              50% OFF July
+            </span>
+          </div>
+          <span className="font-bold text-lg text-green-700">$ 200.000 COP</span>
+        </div>
+      ),
       content: [
         "Fundamentos del liderazgo público juvenil",
-        "Diseño de políticas públicas juveniles",
-        "Formulación de proyectos con enfoque juvenil",
-        "Liderazgo basado en datos + Comunicación de impacto",
-        "Plan de acción, posicionamiento digital y sostenibilidad política"
+        "Diseño de políticas públicas con enfoque joven",
+        "Formulación de proyectos de impacto",
+        "Liderazgo basado en datos + Comunicación efectiva",
+        "Plan de acción, posicionamiento digital y sostenibilidad"
       ]
     }
   ];
@@ -455,10 +505,10 @@ const EATechWebsite = () => {
                   />
                   <h4 className="font-semibold text-lg mb-2">Daniel Hurtado</h4>
                   <p className="text-gray-600 font-medium mb-4">
-                    CEO y Gerente de Datos / Científico de datos y Economista
+                    CEO y Gerente de Datos
                   </p>
                   <p className="text-gray-600 text-justify">
-                    Daniel cuenta con más de 3 años de experiencia en ciencia de datos,
+                    Científico de datos y Economista con más de 3 años de experiencia en análisis de datos,
                     combinando economía, BI y machine learning para sectores como salud,
                     manufactura, retail y e-commerce.
                   </p>
@@ -471,10 +521,10 @@ const EATechWebsite = () => {
                   />
                   <h4 className="font-semibold text-lg mb-2">Valentina Pacheco Ferrer</h4>
                   <p className="text-gray-600 font-medium mb-4">
-                    Directora de crecimiento y marketing / Estratega y Economista
+                    Directora de crecimiento y marketing
                   </p>
                   <p className="text-gray-600 text-justify">
-                    Valentina cuenta con 10 años en el sector social, 5 en el sector público,
+                    Estratega y Economista con 10 años en el sector social, 5 en el sector público,
                     y 3 años en el sector digital acompañando fundaciones, emprendimientos,
                     marcas personales y políticas.
                   </p>
