@@ -515,7 +515,7 @@ const EATechWebsite = () => {
                 </div>
                 <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
                   <img
-                    src="https://media.licdn.com/dms/image/v2/D4E03AQH2XVYrHnD4lw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1668789112556?e=1756339200&v=beta&t=i6CFAda6dcTcp_NIA12pXjG8dfSHAJ-ukDSjGUMWjDM"
+                    src="https://media.licdn.com/dms/image/v2/D4E03AQF-DP09gNwGSg/profile-displayphoto-crop_800_800/B4EZh7mAdaGYAI-/0/1754420219144?e=1757548800&v=beta&t=nax-QmZpxDvpU1odSqt6pN4dZlmGBDnD2cYNisKzNOY"
                     alt="Foto de Valentina Pacheco Ferrer"
                     className="w-24 h-24 rounded-full mb-4 object-cover"
                   />
