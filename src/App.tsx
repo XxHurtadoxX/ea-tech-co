@@ -499,7 +499,7 @@ const EATechWebsite = () => {
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 min-h-[300px] flex flex-col justify-center items-center">
                   <img
-                    src="https://media.licdn.com/dms/image/v2/D4E03AQHBjglRbVTxCg/profile-displayphoto-shrink_800_800/B4EZVzsOY3HcAg-/0/1741402728439?e=1756339200&v=beta&t=5JnayiC7rA78DWH2IvvGIeE4WBKQTlGxCxQK7soWmT0"
+                    src="https://i.imgur.com/aP6XtZq.jpeg"
                     alt="Foto de Daniel Hurtado"
                     className="w-24 h-24 rounded-full mb-4 object-cover"
                   />
