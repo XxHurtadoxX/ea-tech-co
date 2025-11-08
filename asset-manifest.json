@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/ea-tech-co/static/css/main.c441cd82.css",
-    "main.js": "/ea-tech-co/static/js/main.16b5a56d.js",
+    "main.css": "/ea-tech-co/static/css/main.a1d47abf.css",
+    "main.js": "/ea-tech-co/static/js/main.f540c366.js",
     "static/js/453.99906ecf.chunk.js": "/ea-tech-co/static/js/453.99906ecf.chunk.js",
+    "static/media/power commerce.png": "/ea-tech-co/static/media/power commerce.becbb4e130da67743f55.png",
+    "static/media/soluciones atid.png": "/ea-tech-co/static/media/soluciones atid.c8d813d7ddafd9c630e9.png",
+    "static/media/UA.jpg": "/ea-tech-co/static/media/UA.a03d3c02b547f92f35e3.jpg",
+    "static/media/SAT.png": "/ea-tech-co/static/media/SAT.23c09e60bd0f15bf5326.png",
     "index.html": "/ea-tech-co/index.html",
-    "main.c441cd82.css.map": "/ea-tech-co/static/css/main.c441cd82.css.map",
-    "main.16b5a56d.js.map": "/ea-tech-co/static/js/main.16b5a56d.js.map",
+    "main.a1d47abf.css.map": "/ea-tech-co/static/css/main.a1d47abf.css.map",
+    "main.f540c366.js.map": "/ea-tech-co/static/js/main.f540c366.js.map",
     "453.99906ecf.chunk.js.map": "/ea-tech-co/static/js/453.99906ecf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c441cd82.css",
-    "static/js/main.16b5a56d.js"
+    "static/css/main.a1d47abf.css",
+    "static/js/main.f540c366.js"
   ]
 }
