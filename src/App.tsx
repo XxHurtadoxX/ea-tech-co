@@ -532,8 +532,130 @@ const EATechWebsite = () => {
               </div>
             </div>
           </div>
-        </section>
 
+          {/* Featured Clients Section */}
+          <div className="mt-20">
+            <h3 className="text-2xl font-bold mb-8 text-center">Clientes Destacados</h3>
+            <div className="bg-gray-50 py-8 overflow-hidden logo-container">
+              <div className="flex logo-scroll">
+                {/* Primera set de logos */}
+                <div className="flex space-x-10 mx-2.5">
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/SAT.png')}
+                        alt="SAT"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/UA.jpg')}
+                        alt="UA"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/empathy.jpeg')}
+                        alt="Empathy"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/la era.png')}
+                        alt="La Era"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/power commerce.png')}
+                        alt="Power Commerce"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-48 w-48 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/soluciones atid.png')}
+                        alt="Soluciones ATID"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+                {/* Duplicado de logos para scroll infinito */}
+                <div className="flex space-x-10 mx-2.5">
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/SAT.png')}
+                        alt="SAT"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/UA.jpg')}
+                        alt="UA"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/empathy.jpeg')}
+                        alt="Empathy"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/la era.png')}
+                        alt="La Era"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-40 w-40 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/power commerce.png')}
+                        alt="Power Commerce"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="h-48 w-48 rounded-full bg-white overflow-hidden">
+                      <img
+                        src={require('./empresas/soluciones atid.png')}
+                        alt="Soluciones ATID"
+                        className="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
 
       {/* Services Section */}
       <section id="servicios" className="py-20 bg-gray-50">
